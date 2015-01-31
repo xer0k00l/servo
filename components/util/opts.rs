@@ -13,7 +13,7 @@ use layers::geometry::DevicePixel;
 use getopts;
 use std::collections::HashSet;
 use std::cmp;
-use std::io;
+use std::old_io;
 use std::mem;
 use std::os;
 use std::ptr;

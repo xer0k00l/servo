@@ -55,7 +55,7 @@ use std::borrow::ToOwned;
 use std::cell::Cell;
 use std::sync::mpsc::{Sender, Receiver, channel};
 use std::default::Default;
-use std::io::Timer;
+use std::old_io::Timer;
 use std::str::FromStr;
 use std::time::duration::Duration;
 use time;

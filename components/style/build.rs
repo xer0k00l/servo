@@ -4,8 +4,8 @@
 
 use std::os;
 use std::path::Path;
-use std::io::process::{Command, ProcessExit, StdioContainer};
-use std::io::File;
+use std::old_io::process::{Command, ProcessExit, StdioContainer};
+use std::old_io::File;
 
 
 fn main() {

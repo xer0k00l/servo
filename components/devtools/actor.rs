@@ -7,7 +7,7 @@
 use std::any::Any;
 use std::collections::HashMap;
 use std::cell::{Cell, RefCell};
-use std::io::TcpStream;
+use std::old_io::TcpStream;
 use std::mem::replace;
 use serialize::json;
 

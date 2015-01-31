@@ -12,7 +12,7 @@ use hyper::header::common::{ContentLength, ContentType, Host, Location};
 use hyper::method::Method;
 use hyper::status::StatusClass;
 use std::error::Error;
-use std::io::Reader;
+use std::old_io::Reader;
 use std::sync::mpsc::Sender;
 use util::task::spawn_named;
 use url::{Url, UrlParser};
