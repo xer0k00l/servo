@@ -9,7 +9,7 @@ use std::num;
 use std::num::Int;
 
 /// An index type to be used by a `Range`
-pub trait RangeIndex<T>: Int + fmt::Show {
+pub trait RangeIndex<T>: Int + fmt::Debug {
     fn new(x: T) -> Self;
     fn get(self) -> T;
 }
@@ -26,7 +26,7 @@ impl RangeIndex<int> for int {
 #[macro_export]
 macro_rules! int_range_index {
     ($(#[$attr:meta])* struct $Self:ident($T:ty)) => (
-        #[derive(Clone, PartialEq, PartialOrd, Eq, Ord, Show, Copy)]
+        #[derive(Clone, PartialEq, PartialOrd, Eq, Ord, Debug, Copy)]
         $(#[$attr])*
         pub struct $Self(pub $T);
 
@@ -192,7 +192,7 @@ pub struct Range<I> {
 }
 
 #[old_impl_check]
-impl<I: RangeIndex<T>, T> fmt::Show for Range<I> {
+impl<I: RangeIndex<T>, T> fmt::Debug for Range<I> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "[{:?} .. {:?})", self.begin(), self.end())
     }

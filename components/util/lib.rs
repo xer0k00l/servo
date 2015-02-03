@@ -7,6 +7,7 @@
 #![feature(int_uint)]
 #![feature(old_impl_check)]
 #![feature(box_syntax)]
+#![feature(optin_builtin_traits)]
 
 #![deny(unused_imports)]
 #![deny(unused_variables)]
@@ -16,6 +17,7 @@
 #[macro_use] extern crate log;
 
 extern crate alloc;
+#[macro_use] extern crate bitflags;
 extern crate collections;
 extern crate cssparser;
 extern crate geom;
