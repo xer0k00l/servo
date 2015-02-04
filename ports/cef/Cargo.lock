@@ -34,7 +34,7 @@ dependencies = [
 [[package]]
 name = "azure"
 version = "0.1.0"
-source = "git+https://github.com/servo/rust-azure#779233af589e797f07e9e2f3f45017fb55c33c68"
+source = "git+https://github.com/servo/rust-azure#9ae7938c56e8c59d09a3ce682dd4cf5fcbb2ac57"
 dependencies = [
  "core_foundation 0.1.0 (git+https://github.com/servo/rust-core-foundation)",
  "core_graphics 0.1.0 (git+https://github.com/servo/rust-core-graphics)",
@@ -241,7 +241,7 @@ dependencies = [
 [[package]]
 name = "fontconfig-sys"
 version = "2.11.1"
-source = "git+https://github.com/servo/libfontconfig#35af4499144dce5b1204a99031d11ef8d1b27a9c"
+source = "git+https://github.com/servo/libfontconfig#4fdcf156b4d5e1e9712cf4a4dff8eccef3c9ad5d"
 dependencies = [
  "expat-sys 2.1.0 (git+https://github.com/servo/libexpat)",
  "freetype-sys 2.4.11 (git+https://github.com/servo/libfreetype2)",
@@ -266,6 +266,14 @@ source = "git+https://github.com/alexcrichton/gcc-rs#016cc1597bbe52c26e41cf68747
 name = "gcc"
 version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "gdi32-sys"
+version = "0.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "winapi 0.0.5 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
 [[package]]
 name = "geom"
@@ -332,24 +340,29 @@ dependencies = [
 [[package]]
 name = "gleam"
 version = "0.0.1"
-source = "git+https://github.com/servo/gleam#c54eb9ad6d4b62b7effbe9c79a1b3720845b45b4"
+source = "git+https://github.com/servo/gleam#cb4fc448bde3c09f28c83517c02a8daa6d43d5dd"
 dependencies = [
+ "gl_common 0.0.3 (git+https://github.com/bjz/gl-rs.git)",
  "gl_generator 0.0.13 (git+https://github.com/bjz/gl-rs.git)",
+ "khronos_api 0.0.5 (git+https://github.com/bjz/gl-rs.git)",
 ]
 
 [[package]]
 name = "glutin"
 version = "0.0.4-pre"
-source = "git+https://github.com/servo/glutin?branch=servo#3814e0cadc85f558b7a417c9d4b97337382aeb36"
+source = "git+https://github.com/servo/glutin?branch=servo#7d602af694bdb400944990846f91d1043e2a2bc8"
 dependencies = [
  "android_glue 0.0.1 (git+https://github.com/tomaka/android-rs-glue)",
  "cocoa 0.1.1 (git+https://github.com/servo/rust-cocoa)",
  "core_foundation 0.1.0 (git+https://github.com/servo/rust-core-foundation)",
  "core_graphics 0.1.0 (git+https://github.com/servo/rust-core-graphics)",
+ "gdi32-sys 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "gl_common 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "gl_generator 0.0.13 (registry+https://github.com/rust-lang/crates.io-index)",
+ "kernel32-sys 0.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "khronos_api 0.0.5 (registry+https://github.com/rust-lang/crates.io-index)",
- "winapi 0.0.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "user32-sys 0.0.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "winapi 0.1.8 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -371,10 +384,11 @@ dependencies = [
 [[package]]
 name = "glx"
 version = "0.0.1"
-source = "git+https://github.com/servo/rust-glx#8cfea36c566408fdc045e850bc809dc87a942697"
+source = "git+https://github.com/servo/rust-glx#e0444395cdd8353c658ea9d377c085050c672b64"
 dependencies = [
  "gl_common 0.0.3 (git+https://github.com/bjz/gl-rs.git)",
  "gl_generator 0.0.13 (git+https://github.com/bjz/gl-rs.git)",
+ "khronos_api 0.0.5 (git+https://github.com/bjz/gl-rs.git)",
 ]
 
 [[package]]
@@ -402,8 +416,8 @@ source = "git+https://github.com/servo/html5ever#6ef51804fe1ed4ca68d9e76cd66a3aa
 
 [[package]]
 name = "hyper"
-version = "0.1.1"
-source = "git+https://github.com/servo/hyper?branch=servo#7f48a7e945180a4f762dc75236210d20a69b4a6a"
+version = "0.1.9"
+source = "git+https://github.com/servo/hyper?branch=servo#c983ebf3ce1e5b06f500246375e538643ab03c76"
 dependencies = [
  "cookie 0.1.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -431,9 +445,17 @@ dependencies = [
 [[package]]
 name = "js"
 version = "0.1.0"
-source = "git+https://github.com/servo/rust-mozjs#37fb09a6c37f2ee4fbebf09ac1fbf3b1d66ac6c4"
+source = "git+https://github.com/servo/rust-mozjs#8f39e40226ec9a9c020665b94d545051c3d16e18"
 dependencies = [
  "mozjs-sys 0.0.0 (git+https://github.com/servo/mozjs)",
+]
+
+[[package]]
+name = "kernel32-sys"
+version = "0.0.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "winapi 0.0.5 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -449,7 +471,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "layers"
 version = "0.1.0"
-source = "git+https://github.com/servo/rust-layers#76f2ba0000bd5ae4d27742878fce505adb1a81e7"
+source = "git+https://github.com/servo/rust-layers#acc0214a1d7ff95c712a5a2e3b8cf845aeffc36a"
 dependencies = [
  "azure 0.1.0 (git+https://github.com/servo/rust-azure)",
  "cgl 0.0.1 (git+https://github.com/servo/rust-cgl)",
@@ -459,6 +481,7 @@ dependencies = [
  "gleam 0.0.1 (git+https://github.com/servo/gleam)",
  "glx 0.0.1 (git+https://github.com/servo/rust-glx)",
  "io_surface 0.1.0 (git+https://github.com/servo/rust-io-surface)",
+ "skia 0.0.20130412 (git+https://github.com/servo/skia?branch=upstream-2014-06-16)",
  "xlib 0.1.0 (git+https://github.com/servo/rust-xlib)",
 ]
 
@@ -538,7 +561,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "mozjs-sys"
 version = "0.0.0"
-source = "git+https://github.com/servo/mozjs#58ee8869c7e589244ab2eb3a3ad15e2b64498428"
+source = "git+https://github.com/servo/mozjs#5c5c0e8a737fc9471d05073ffedd7f67e4fcfb79"
 
 [[package]]
 name = "msg"
@@ -547,7 +570,7 @@ dependencies = [
  "azure 0.1.0 (git+https://github.com/servo/rust-azure)",
  "core_foundation 0.1.0 (git+https://github.com/servo/rust-core-foundation)",
  "geom 0.1.0 (git+https://github.com/servo/rust-geom)",
- "hyper 0.1.1 (git+https://github.com/servo/hyper?branch=servo)",
+ "hyper 0.1.9 (git+https://github.com/servo/hyper?branch=servo)",
  "io_surface 0.1.0 (git+https://github.com/servo/rust-io-surface)",
  "layers 0.1.0 (git+https://github.com/servo/rust-layers)",
  "style 0.0.1",
@@ -565,7 +588,7 @@ name = "net"
 version = "0.0.1"
 dependencies = [
  "geom 0.1.0 (git+https://github.com/servo/rust-geom)",
- "hyper 0.1.1 (git+https://github.com/servo/hyper?branch=servo)",
+ "hyper 0.1.9 (git+https://github.com/servo/hyper?branch=servo)",
  "png 0.1.0 (git+https://github.com/servo/rust-png)",
  "stb_image 0.1.0 (git+https://github.com/servo/rust-stb-image)",
  "time 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -633,7 +656,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "png"
 version = "0.1.0"
-source = "git+https://github.com/servo/rust-png#ade2143c96641abdaedd8bc556f45935d18c35df"
+source = "git+https://github.com/servo/rust-png#687f103498654815682d2a750f26bbefc46d9da4"
 dependencies = [
  "gcc 0.1.7 (git+https://github.com/alexcrichton/gcc-rs)",
  "png-sys 1.6.16 (git+https://github.com/servo/rust-png)",
@@ -642,7 +665,7 @@ dependencies = [
 [[package]]
 name = "png-sys"
 version = "1.6.16"
-source = "git+https://github.com/servo/rust-png#ade2143c96641abdaedd8bc556f45935d18c35df"
+source = "git+https://github.com/servo/rust-png#687f103498654815682d2a750f26bbefc46d9da4"
 
 [[package]]
 name = "rustc-serialize"
@@ -660,7 +683,7 @@ dependencies = [
  "geom 0.1.0 (git+https://github.com/servo/rust-geom)",
  "gfx 0.0.1",
  "html5ever 0.0.0 (git+https://github.com/servo/html5ever)",
- "hyper 0.1.1 (git+https://github.com/servo/hyper?branch=servo)",
+ "hyper 0.1.9 (git+https://github.com/servo/hyper?branch=servo)",
  "js 0.1.0 (git+https://github.com/servo/rust-mozjs)",
  "msg 0.0.1",
  "net 0.0.1",
@@ -708,7 +731,7 @@ dependencies = [
 [[package]]
 name = "skia"
 version = "0.0.20130412"
-source = "git+https://github.com/servo/skia?branch=upstream-2014-06-16#387777643df6df6ce8fb61ce069c7c60b32ab38c"
+source = "git+https://github.com/servo/skia?branch=upstream-2014-06-16#76b626df0d6cfb32eb1ee5ba3c7b52aadd5a42e3"
 dependencies = [
  "expat-sys 2.1.0 (git+https://github.com/servo/libexpat)",
  "freetype-sys 2.4.11 (git+https://github.com/servo/libfreetype2)",
@@ -717,7 +740,7 @@ dependencies = [
 [[package]]
 name = "stb_image"
 version = "0.1.0"
-source = "git+https://github.com/servo/rust-stb-image#2ba03a447b9ef101c25e07bb7f8876416e5fcd71"
+source = "git+https://github.com/servo/rust-stb-image#8fb5031333ea142802724719ce20bfa132bc4802"
 
 [[package]]
 name = "string_cache"
@@ -795,12 +818,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "user32-sys"
+version = "0.0.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "winapi 0.0.5 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "util"
 version = "0.0.1"
 dependencies = [
+ "bitflags 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "cssparser 0.2.0 (git+https://github.com/servo/rust-cssparser)",
  "geom 0.1.0 (git+https://github.com/servo/rust-geom)",
  "layers 0.1.0 (git+https://github.com/servo/rust-layers)",
+ "lazy_static 0.1.7 (git+https://github.com/Kimundi/lazy-static.rs)",
  "plugins 0.0.1",
  "string_cache 0.0.0 (git+https://github.com/servo/string-cache)",
  "string_cache_macros 0.0.0 (git+https://github.com/servo/string-cache)",
@@ -821,6 +854,11 @@ dependencies = [
 [[package]]
 name = "winapi"
 version = "0.0.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "winapi"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
